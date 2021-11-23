@@ -2,7 +2,7 @@
 
 This is a R pacakge including some tools to treat aligned genome sequence. To acess them, you can try
 
-  	install_github("wuaipinglab/genome_treatment/package_name")
+  	install_github("WengLynn/genome_treatment/package_name")
  
 findout (This is developed for SARS-CoV-2.)
 
