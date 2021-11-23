@@ -4,7 +4,7 @@ This is a R pacakge including some tools to treat aligned genome sequence. To ac
 
   	install_github("WengLynn/genome_treatment/package_name")
  
-findout (This is developed for SARS-CoV-2.)
+1. findout (This is developed for SARS-CoV-2.)
 
 Now the available package is: 1.1 findout_mutation (depending on tidyr, stringr) Description: When you try to call INDEL or SNP from a very large and already aligned geonome sequences on your local system, I will recommend you to use it. To use it try:
 
@@ -22,7 +22,9 @@ Not available package is: 1.2 findout_whichprotein (coming soon) Description: Wh
 
 Weng is ongoing..
 
-shorten (This is developed NOT for SARS-CoV-2.) 2.1 shorten_site Description: When you try to remove your conserved sites to reduce sequence length for further analysis such as calling adaptive mutations, I will recommend you to use it.
+2. shorten (This is developed NOT for SARS-CoV-2.) 
+
+2.1 shorten_site Description: When you try to remove your conserved sites to reduce sequence length for further analysis such as calling adaptive mutations, I will recommend you to use it.
 Weng is ongoing..
 
 Slow Down and Good Night
