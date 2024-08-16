@@ -11,7 +11,7 @@ findout_APO =function (filename, key_pattern)
   mmref = unlist(strsplit(reffa, ""))
   mmcount = length(mmref)
   coln = c(1:mmcount)
-  write.table(t(as.data.frame(c("Type", "loc", "NNfrom", "NNto","type_count","all_snp_count","freq","seqname"))), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, row.names = F, 
+  write.table(t(as.data.frame(c("Type", "loc", "NNfrom", "NNto","type_count","all_snp_count","freq","combined_freq","seqname"))), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, row.names = F, 
               sep = "\t", quote = F, append = F)
   lineCnt = 0
   con <- file(filename, "r")
@@ -63,15 +63,15 @@ findout_APO =function (filename, key_pattern)
       all_snp_count = length(c(mm_SNP,APO_TC2TT,APO_GA2AA))
       
       if (length(mm_SNP) > 0) {
-        write.table(cbind("other_SNP", mm_SNP, mmref[mm_SNP], mm[mm_SNP],other_snp_count,all_snp_count,other_snp_count/all_snp_count,name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
+        write.table(cbind("other_SNP", mm_SNP, mmref[mm_SNP], mm[mm_SNP],other_snp_count,all_snp_count,other_snp_count/all_snp_count,other_snp_count/all_snp_count,name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
                     row.names = F, sep = "\t", quote = F, append = T)
       }
       if (length(APO_TC2TT) > 0) {
-        write.table(cbind("TC2TT", APO_TC2TT, "TC", "TT",TC2TT_count,all_snp_count,TC2TT_count/all_snp_count, name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
+        write.table(cbind("TC2TT", APO_TC2TT, "TC", "TT",TC2TT_count,all_snp_count,TC2TT_count/all_snp_count,(TC2TT_count+GA2AA_count)/all_snp_count, name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
                     row.names = F, sep = "\t", quote = F, append = T)
       }
       if (length(APO_GA2AA) > 0) {
-        write.table(cbind("TC2TT", APO_GA2AA, "GA", "AA",GA2AA_count,all_snp_count,GA2AA_count/all_snp_count, name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
+        write.table(cbind("TC2TT", APO_GA2AA, "GA", "AA",GA2AA_count,all_snp_count,GA2AA_count/all_snp_count,(TC2TT_count+GA2AA_count)/all_snp_count, name), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, 
                     row.names = F, sep = "\t", quote = F, append = T)
       }
       #}
