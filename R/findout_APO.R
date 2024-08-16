@@ -11,7 +11,7 @@ findout_APO =function (filename, key_pattern)
   mmref = unlist(strsplit(reffa, ""))
   mmcount = length(mmref)
   coln = c(1:mmcount)
-  write.table(t(as.data.frame(c("Type", "loc", "NNfrom", "NNto","type_count","all_snp_count","freq","ref_seqname"))), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, row.names = F, 
+  write.table(t(as.data.frame(c("Type", "loc", "NNfrom", "NNto","type_count","all_snp_count","freq","seqname"))), paste0(filename,"_vs_",key_pattern,"_APO_info.txt"), col.names = F, row.names = F, 
               sep = "\t", quote = F, append = T)
   lineCnt = 0
   con <- file(filename, "r")
